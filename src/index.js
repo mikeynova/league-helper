@@ -6,6 +6,8 @@ import ReactDOM from 'react-dom'
 import configureStore from './store'
 import AppRoot from './app-root.jsx'
 
+import './style/index.scss'
+
 const store = configureStore()
 
 function render(Component) {

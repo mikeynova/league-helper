@@ -1,0 +1,22 @@
+$primary-color: #e1e8ed;
+$primary-font: 'Open Sans', sans-serif;
+
+html,
+body {
+  background-color: $primary-color;
+  border: 0;
+  font-family: $primary-font;
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+.app {
+  height: 100%;
+}
+
+.app-root {
+  height: 100%;
+}

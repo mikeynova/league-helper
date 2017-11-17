@@ -1,32 +1,8 @@
-export const SET_SUMMONER_PROFILE_PIC = 'SET_SUMMONER_PROFILE_PIC'
-export const SET_SUMMONER_RANK = 'SET_SUMMONER_RANK'
-export const SET_SUMMONER_MOST_PLAYED = 'SET_SUMMONER_MOST_PLAYED'
-export const SET_SUMMONER_MOST_PLAYED_PIC = 'SET_SUMMONER_MOST_PLAYED_PIC'
+export const SET_SUMMONER_INFO = 'SET_SUMMONER_INFO'
 
-export function setSummonerProfilePic(data) {
+export function setSummonerInfo(data) {
   return {
-    type: SET_SUMMONER_PROFILE_PIC,
-    payload: data,
-  }
-}
-
-export function setSummonerRank(data) {
-  return {
-    type: SET_SUMMONER_RANK,
-    payload: data,
-  }
-}
-
-export function setSummonerMostPlayedChamps(data) {
-  return {
-    type: SET_SUMMONER_MOST_PLAYED,
-    payload: data,
-  }
-}
-
-export function setSummonerMostPlayedChampPic(data) {
-  return {
-    type: SET_SUMMONER_MOST_PLAYED_PIC,
+    type: SET_SUMMONER_INFO,
     payload: data,
   }
 }

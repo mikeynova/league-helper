@@ -4,15 +4,15 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import PropTypes from 'prop-types'
 
-import App from './components/app.jsx'
+import SummonerApp from './components/summoner-app.jsx'
 import SummonerProfile from './components/summoner-profile.jsx'
 
 const AppRoot = ({ store, history }) => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <div>
-        <Route exact path="/" component={App}/>
-        <Route exact path="/summonerProfile" component={SummonerProfile}/>
+      <div className="app-root">
+        <Route exact path="/" component={SummonerApp}/>
+        <Route exact path="/summoner-profile" component={SummonerProfile}/>
       </div>
     </ConnectedRouter>
   </Provider>

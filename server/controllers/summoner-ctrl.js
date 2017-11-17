@@ -31,7 +31,11 @@ module.exports = {
                   summonerObj.leagueId = winsRes.leagueId
                   summonerObj.tier = winsRes.tier
                   summonerObj.leaguePoints = winsRes.leaguePoints
-                  res.send(summonerObj)
+                  Summoner.highestMastery(idRes.id)
+                    .then(masteryRes => {
+                      summonerObj.mastery = masteryRes
+                      res.send(summonerObj)
+                    })
                 })
             })
         })
