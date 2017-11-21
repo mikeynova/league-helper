@@ -11,7 +11,9 @@ Summoner.getId = summonerName => (
     headers: {
       'X-Riot-Token': riot,
     },
-  }).then(res => res.data)
+  })
+  .then(res => res)
+  .catch(err => ({ status: err.response.status, statusText: err.response.statusText }))
 )
 
 Summoner.getMatches = accountId => (
@@ -22,7 +24,9 @@ Summoner.getMatches = accountId => (
     headers: {
       'X-Riot-Token': riot,
     },
-  }).then(res => res.data)
+  })
+  .then(res => res.data)
+  .catch(err => ({ status: err.response.status, statusText: err.response.statusText }))
 )
 
 Summoner.getWins = summonerId => (
@@ -33,7 +37,9 @@ Summoner.getWins = summonerId => (
     headers: {
       'X-Riot-Token': riot,
     },
-  }).then(res => res.data[0])
+  })
+  .then(res => res.data[0])
+  .catch(err => console.log('getWins error message:', err))
 )
 
 Summoner.highestMastery = summonerId => (
@@ -44,5 +50,7 @@ Summoner.highestMastery = summonerId => (
     headers: {
       'X-Riot-Token': riot,
     },
-  }).then(res => res.data)
+  })
+  .then(res => res.data)
+  .catch(err => console.log('highestMastery error message:', err))
 )

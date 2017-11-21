@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import axios from 'axios'
-import { connect } from 'react-redux'
-import * as actions from '../actions/summoner-actions'
 
 class Summoner extends Component {
   constructor(props) {
     super(props)
     this.state = {
       summonerName: '',
-      clicked: false,
     }
     this.handleSummonerID = this.handleSummonerID.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -17,23 +13,7 @@ class Summoner extends Component {
 
   handleSummonerID(e) {
     e.preventDefault()
-    this.setState({
-      clicked: true,
-    })
-    // axios.get('/summonerInfo', {
-    //   headers: { summonerName: this.state.summonerName },
-    // })
-    // .then(response => {
-    //   if (response) {
-    //     this.props.setSummonerInfo(response.data)
-    //     this.props.history.push('/summoner-profile')
-    //   } else {
-    //     this.setState({
-    //       summonerName: '',
-    //     })
-    //   }
-    // })
-    this.props.history.push('/summoner-profile', { summoner: this.state.summonerName })
+    this.props.history.push(`/summoner-profile/${this.state.summonerName}`)
   }
 
   handleChange(e) {
@@ -56,15 +36,10 @@ class Summoner extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  getSummonerInfo: state.setSummonerInfo,
-})
-
 Summoner.propTypes = {
-  setSummonerInfo: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
 }
 
-export default connect(mapStateToProps, actions)(Summoner)
+export default Summoner

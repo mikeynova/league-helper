@@ -12,7 +12,7 @@ const AppRoot = ({ store, history }) => (
     <ConnectedRouter history={history}>
       <div className="app-root">
         <Route exact path="/" component={SummonerApp}/>
-        <Route exact path="/summoner-profile" component={SummonerProfile}/>
+        <Route exact path="/summoner-profile/:summoner" component={SummonerProfile}/>
       </div>
     </ConnectedRouter>
   </Provider>

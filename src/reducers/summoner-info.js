@@ -1,35 +1,37 @@
-import { number, string, bool } from 'prop-types'
 import { SET_SUMMONER_INFO } from '../actions/summoner-actions'
 
 const initialState = {
-  accountId: number,
-  freshBlood: bool,
-  hotStreak: bool,
-  id: number,
-  inactive: bool,
-  leagueId: string,
-  leagueName: string,
-  leaguePoints: number,
-  losses: number,
-  mastery: [],
-  matches: [],
-  name: string,
-  playerOrTeamId: string,
-  playerOrTeamName: string,
-  profileIconId: number,
-  queueType: string,
-  rank: string,
-  revisionDate: number,
-  summonerLevel: number,
-  tier: string,
-  veteran: bool,
-  wins: bool,
+  summonerInfo: {
+    statusObj: { status: -1, statusText: 'initial' },
+    accountId: -1,
+    freshBlood: false,
+    hotStreak: false,
+    id: -1,
+    inactive: false,
+    leagueId: 'initial',
+    leagueName: 'initial',
+    leaguePoints: -1,
+    losses: -1,
+    mastery: [],
+    matches: [],
+    name: 'initial',
+    playerOrTeamId: 'initial',
+    playerOrTeamName: 'initial',
+    profileIconId: -1,
+    queueType: 'initial',
+    rank: 'initial',
+    revisionDate: -1,
+    summonerLevel: -1,
+    tier: 'initial',
+    veteran: false,
+    wins: -1,
+  },
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_SUMMONER_INFO:
-      return action.payload
+      return { ...state, summonerInfo: action.payload }
     default:
       return state
   }
